@@ -9,12 +9,22 @@
  */
 
 import { useState } from "react";
-import { ShieldCheck, CheckSquare, Sparkles, Flame, Users, Calendar, HelpCircle, ArrowRight, BookOpen, Image, Lock, Download, Check, Home, Settings, ChevronsDown, Star, X, Folder } from "lucide-react";
+import { ShieldCheck, CheckSquare, Sparkles, Flame, Users, Calendar, HelpCircle, ArrowRight, BookOpen, Image, Lock, Download, Check, Home, ChevronsDown, Star, X, Folder } from "lucide-react";
 import { ProductConfig } from "./types";
 import UrgencyHeader from "./components/UrgencyHeader";
 import MaterialSample from "./components/MaterialSample";
 import FAQSection from "./components/FAQSection";
-import CustomizerPanel from "./components/CustomizerPanel";
+
+const imgMockup1200          = "/mockup_1200_atividades.png";
+const imgMockup1200Fallback  = "/Mockup%201200%20atividades.png";
+const imgAcessoImediato      = "/acesso_imediato.png";
+const imgAcessoFallback      = "/__ACESSO_IMEDIATO__1_-removebg-preview.png";
+const imgJogosEmocoes        = "/jogos_emocoes.png";
+const imgJogosEmocoesFall    = "/Jogos%20das%20emo%C3%A7%C3%B5es.png";
+const imgRotinaVisual        = "/rotina_visual.png";
+const imgRotinaVisualFall    = "/Rotina%20Visual.png";
+const imgJogosPedagogicos    = "/jogos_pedagogicos.png";
+const imgJogosPedagogicosFall = "/Jogos%20Pedagogicos.png";
 
 const DEFAULT_CONFIG: ProductConfig = {
   productName: "Kit Completo de Recursos Pedagógicos para TEA",
@@ -32,8 +42,7 @@ const DEFAULT_CONFIG: ProductConfig = {
 };
 
 export default function App() {
-  const [config, setConfig] = useState<ProductConfig>(DEFAULT_CONFIG);
-  const [isCustomizerOpen, setIsCustomizerOpen] = useState(false);
+  const [config] = useState<ProductConfig>(DEFAULT_CONFIG);
 
   const scrollToPricing = () => {
     const element = document.getElementById("pricing-plans-section");
@@ -747,24 +756,6 @@ export default function App() {
           <a href="#sales-funnel-root" className="hover:text-red-500 transition">Contato Suporte</a>
         </div>
       </footer>
-
-      {/* Floating Settings Button to trigger the producer panel */}
-      <button
-        onClick={() => setIsCustomizerOpen(true)}
-        className="fixed bottom-6 left-6 z-40 p-3.5 bg-blue-600 text-white rounded-full shadow-2xl hover:bg-blue-700 transition duration-300 hover:rotate-45 cursor-pointer active:scale-95"
-        title="Painel do Produtor"
-      >
-        <Settings size={20} />
-      </button>
-
-      {/* 9. COORDENADOR DO DESIGN SYSTEM: CONFIG PANEL & DRAWER */}
-      <CustomizerPanel
-        config={config}
-        onChange={setConfig}
-        isOpen={isCustomizerOpen}
-        onToggle={() => setIsCustomizerOpen(!isCustomizerOpen)}
-      />
-
     </div>
   );
 }
