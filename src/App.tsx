@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   ShieldCheck, Sparkles, Flame, Lock, Download, Check,
   ChevronsDown, Star, ChevronDown, ChevronUp
@@ -54,13 +54,13 @@ const faqItems = [
   },
 ];
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer }: { question: string; answer: string; key?: React.Key }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left cursor-pointer hover:bg-slate-50 transition-colors duration-200"
+        className="w-full min-h-[52px] flex items-center justify-between gap-4 p-5 md:p-6 text-left cursor-pointer hover:bg-slate-50 transition-colors duration-200"
       >
         <span className="font-bold text-slate-900 text-sm md:text-base leading-snug">{question}</span>
         {open ? (
@@ -143,6 +143,8 @@ export default function App() {
             <img
               src="/mockup_1200_atividades.png"
               alt="Capa Oficial - + de 1200 atividades"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)]"
             />
           </div>
@@ -232,6 +234,8 @@ export default function App() {
                   <img
                     src={img.src}
                     alt={img.alt}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -345,6 +349,8 @@ export default function App() {
             <img
               src="/acesso_imediato.png"
               alt="Kit Principal - + de 1200 atividades com Acesso Imediato"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-contain relative z-10 transition-transform duration-500 hover:scale-[1.02] drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
             />
           </div>
@@ -412,6 +418,8 @@ export default function App() {
                     <img
                       src={bonus.src}
                       alt={bonus.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain p-2 hover:scale-105 transition-transform duration-300"
                     />
                   </div>
