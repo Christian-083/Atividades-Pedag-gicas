@@ -1,0 +1,6 @@
+{
+  "name": "Página de Vendas de Alta Conversão",
+  "description": "Uma página de vendas altamente otimizada para infoprodutos com contador de urgência, player de VSL interativo, amostra de material e simulador de checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
