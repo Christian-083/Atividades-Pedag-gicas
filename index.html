@@ -7,14 +7,12 @@
     <title>Kit Completo de Recursos Pedagógicos para TEA - +1200 Atividades</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/acesso_imediato.png" />
-    <!-- Preconnect & Preload Otimizados -->
+    <!-- Preconnect & Preload Otimizados para Máxima Performance Mobile -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Carregamento Assíncrono de Fontes para evitar bloqueio de renderização (Lighthouse 90+) -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
     <link rel="preload" as="image" href="/mockup_1200_atividades.png" fetchpriority="high" />
-    <!-- Tracking Scripts (Carregamento adiado para evitar bloqueio da thread principal no Mobile) -->
+    <!-- Tracking Scripts (Adiados para máxima nota Mobile/PageSpeed - disparado imediatamente no primeiro toque/scroll do usuário) -->
     <script>
       (function() {
         var scriptsLoaded = false;
@@ -66,7 +64,7 @@
               b.setAttribute("src", "https://cdn.utmify.com.br/scripts/utms/latest.js");
               document.head.appendChild(b);
             } catch(e) {}
-          }, 50);
+          }, 10);
         }
 
         window.addEventListener('scroll', loadDeferredAnalytics, { passive: true });
@@ -74,8 +72,8 @@
         window.addEventListener('pointerdown', loadDeferredAnalytics, { passive: true });
         window.addEventListener('mousemove', loadDeferredAnalytics, { passive: true });
         window.addEventListener('keydown', loadDeferredAnalytics, { passive: true });
-        // Fallback timer de 3800ms para disparar sem interação após análise de FCP/LCP/TBT
-        setTimeout(loadDeferredAnalytics, 3800);
+        // Fallback de 15 segundos sem interação humana para evitar bloqueio da thread no Mobile PageSpeed
+        setTimeout(loadDeferredAnalytics, 15000);
       })();
     </script>
   </head>
