@@ -49,7 +49,7 @@ const faqItems = [
     answer: "Sim! Após baixar os arquivos, você pode imprimir quantas vezes precisar, para quantos alunos desejar, sem nenhum custo adicional.",
   },
   {
-    question: "O que são as atualizações mensais?",
+    question: "O que são as atualizações mensais",
     answer: "Todo mês adicionamos novas atividades pedagógicas ao acervo. Ao adquirir o Kit Premium, você terá acesso a todas as atualizações futuras sem pagar nada a mais.",
   },
 ];
@@ -143,6 +143,8 @@ export default function App() {
             <img
               src="/mockup_1200_atividades.png"
               alt="Capa Oficial - + de 1200 atividades"
+              width={600}
+              height={600}
               fetchPriority="high"
               decoding="async"
               className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)]"
@@ -234,6 +236,8 @@ export default function App() {
                   <img
                     src={img.src}
                     alt={img.alt}
+                    width={400}
+                    height={400}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-300"
@@ -349,6 +353,8 @@ export default function App() {
             <img
               src="/acesso_imediato.png"
               alt="Kit Principal - + de 1200 atividades com Acesso Imediato"
+              width={600}
+              height={600}
               loading="lazy"
               decoding="async"
               className="w-full h-auto object-contain relative z-10 transition-transform duration-500 hover:scale-[1.02] drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
@@ -418,6 +424,8 @@ export default function App() {
                     <img
                       src={bonus.src}
                       alt={bonus.title}
+                      width={400}
+                      height={400}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-contain p-2 hover:scale-105 transition-transform duration-300"
